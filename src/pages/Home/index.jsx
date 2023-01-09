@@ -1,8 +1,8 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-05 14:13:32
- * @LastEditTime: 2023-01-09 14:12:35
- * @LastEditors: dingyuwen
+ * @LastEditTime: 2023-01-10 00:09:26
+ * @LastEditors: dingyuwen ding_yuwen@163.com
  * @Description:
  */
 import { useState } from 'react'
@@ -16,23 +16,25 @@ function Home() {
 	const { count: storeCount, loading } = useSelector((state) => state.counter)
 	return (
 		<div className="App">
-			<div>
-				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-					<img src="/vite.svg" className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://reactjs.org" target="_blank" rel="noreferrer">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
+			<div className="place-items-center">
+				<div className="inline-flex">
+					<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
+						<img src="/vite.svg" className="logo" alt="Vite logo" />
+					</a>
+					<a href="https://reactjs.org" target="_blank" rel="noreferrer">
+						<img src={reactLogo} className="logo react" alt="React logo" />
+					</a>
+				</div>
 			</div>
 			<h1>Vite + React</h1>
 			<h1>React-router-dom v6 + RTK</h1>
-			<div className="card">
+			<div className="m-2">
 				<button onClick={() => setCount((count) => count + 1)}>state count is {count}</button>
 				<p>
 					Edit <code>src/App.jsx</code> and save to test HMR
 				</p>
 			</div>
-			<div className="card">
+			<div className="m-2">
 				{loading && <div>loading...</div>}
 				{!loading && <div>store count is {storeCount}</div>}
 

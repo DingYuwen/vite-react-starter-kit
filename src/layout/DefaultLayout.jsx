@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 14:47:08
- * @LastEditTime: 2023-01-09 22:19:34
+ * @LastEditTime: 2023-01-10 00:02:14
  * @LastEditors: dingyuwen ding_yuwen@163.com
  * @Description:
  */
@@ -22,8 +22,16 @@ const DefaultLayout = () => {
 		<div>
 			<h1> default layout </h1>
 			<span> user: {userInfo.name} </span>
-			<button onClick={handleLogout}>logout</button>
-			<Outlet />
+			<button
+				onClick={handleLogout}
+				type="button"
+				className="bg-indigo-600 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg"
+			>
+				logout
+			</button>
+			<div className="card container mx-auto px-4">
+				<Outlet />
+			</div>
 		</div>
 	)
 }

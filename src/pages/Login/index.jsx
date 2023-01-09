@@ -1,8 +1,8 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 13:51:21
- * @LastEditTime: 2023-01-09 18:19:40
- * @LastEditors: dingyuwen
+ * @LastEditTime: 2023-01-09 23:54:10
+ * @LastEditors: dingyuwen ding_yuwen@163.com
  * @Description:
  */
 import { useSelector, useDispatch } from 'react-redux'
@@ -22,7 +22,7 @@ const Login = () => {
 		navigate(queryString ? redirect + '?' + queryString : redirect)
 	}
 	return (
-		<div>
+		<div className="m-6">
 			<button onClick={() => handleLogin()}>{loading ? '登录中...' : 'login'}</button>
 		</div>
 	)

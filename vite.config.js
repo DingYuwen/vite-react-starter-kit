@@ -14,21 +14,21 @@ export default defineConfig({
 	plugins: [react()],
 	resolve: {
 		alias: {
-			'@': resolve(__dirname, './src'),
-		},
+			'@': resolve(__dirname, './src')
+		}
 	},
 	esbuild: {
 		loader: 'jsx',
 		include: /src\/.*\.jsx?$/,
-		exclude: [],
+		exclude: []
 	},
 	optimizeDeps: {
 		include: ['lodash-es'],
 		esbuildOptions: {
 			loader: {
-				'.js': 'jsx',
-			},
-		},
+				'.js': 'jsx'
+			}
+		}
 	},
 	build: {
 		cssCodeSplit: true, // 如果设置为false，整个项目中的所有 CSS 将被提取到一个 CSS 文件中
@@ -40,15 +40,15 @@ export default defineConfig({
 		terserOptions: {
 			compress: {
 				drop_console: true, // 生产环境去除console
-				drop_debugger: true, // 生产环境去除debugger
-			},
-		},
+				drop_debugger: true // 生产环境去除debugger
+			}
+		}
 	},
 	server: {
 		host: '0.0.0.0',
 		port: 3000, // 设置服务启动端口号
 		open: false, // 设置服务启动时是否自动打开浏览器
-		cors: true, // 允许跨域
+		cors: true // 允许跨域
 
 		// 设置代理，根据项目实际情况配置
 		// proxy: {
@@ -59,5 +59,5 @@ export default defineConfig({
 		// 		rewrite: (path) => path.replace('/api/', '/'),
 		// 	},
 		// },
-	},
+	}
 })
