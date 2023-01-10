@@ -1,8 +1,8 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 14:47:08
- * @LastEditTime: 2023-01-10 00:02:14
- * @LastEditors: dingyuwen ding_yuwen@163.com
+ * @LastEditTime: 2023-01-10 10:05:33
+ * @LastEditors: dingyuwen
  * @Description:
  */
 import { Outlet } from 'react-router-dom'
@@ -29,7 +29,7 @@ const DefaultLayout = () => {
 			>
 				logout
 			</button>
-			<div className="card container mx-auto px-4">
+			<div className="container mx-auto px-4">
 				<Outlet />
 			</div>
 		</div>
