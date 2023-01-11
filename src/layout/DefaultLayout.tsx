@@ -1,19 +1,20 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 14:47:08
- * @LastEditTime: 2023-01-10 10:05:33
+ * @LastEditTime: 2023-01-11 10:54:39
  * @LastEditors: dingyuwen
  * @Description:
  */
+import { FC } from 'react'
 import { Outlet } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useAppSelector, useAppDispatch } from '@/store/hooks'
 import { useNavigate } from 'react-router-dom'
 
 import { logout } from '@/store/user'
-const DefaultLayout = () => {
-	const dispatch = useDispatch()
+const DefaultLayout: FC = () => {
+	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
-	const { userInfo } = useSelector((state) => state.user)
+	const { userInfo } = useAppSelector((state) => state.user)
 	const handleLogout = () => {
 		dispatch(logout())
 		navigate('/login')

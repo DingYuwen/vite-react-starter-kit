@@ -1,26 +1,31 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 16:00:06
- * @LastEditTime: 2023-01-10 12:21:25
+ * @LastEditTime: 2023-01-11 15:40:31
  * @LastEditors: dingyuwen
  * @Description:
  */
-import { useMemo, useState } from 'react'
+import { useMemo, useState, FC, ReactNode, ReactElement } from 'react'
 import { useLocation, Navigate } from 'react-router-dom'
 import { getToken, isNullOrWhitespace } from '@/utils'
 import qs from 'qs'
-import { useSelector, useDispatch } from 'react-redux'
+import { useAppSelector, useAppDispatch } from '@/store/hooks'
 import { setUserInfo } from '@/store/user'
 import { useEffect } from 'react'
+import { RouteMeta} from './index'
 const WHITE_LIST = ['/login', '/404']
 
 //全局路由守卫
-
-const Guard = ({ element, meta }) => {
+interface PropsType {
+	meta: RouteMeta;
+	element: ReactElement
+}
+const Guard: FC<PropsType> = (props) => {
+	let { meta, element } = props
 	const { auth, title } = meta
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 	const { pathname: to, search } = useLocation()
-	const { isLogin, userInfo } = useSelector((state) => state.user)
+	const { isLogin, userInfo } = useAppSelector((state) => state.user)
 
 	const [token, setToken] = useState(getToken())
 
@@ -43,7 +48,7 @@ const Guard = ({ element, meta }) => {
 		// todo: 校验token，失效则需要重新登录
 		// await checkToken
 		getToken() && setToken(getToken())
-		if (token && !isLogin && nextPath.indexOf('/login' === -1)) {
+		if (token && !isLogin && nextPath.indexOf('/login') === -1) {
 			// 暂时手动更新userInfo，之后应该在dispatch(checkToken())成功时更新
 			dispatch(setUserInfo({ name: 'dingyuwen' }))
 		}

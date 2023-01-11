@@ -1,21 +1,21 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-05 14:13:32
- * @LastEditTime: 2023-01-10 10:24:47
+ * @LastEditTime: 2023-01-11 11:16:09
  * @LastEditors: dingyuwen
  * @Description:
  */
 import { useState } from 'react'
 import reactLogo from '@/assets/react.svg'
-import { useSelector, useDispatch } from 'react-redux'
+import { useAppSelector, useAppDispatch } from '@/store/hooks'
 import { Link } from 'react-router-dom'
 import { increment, decrement, decrementAsync } from '@/store/counter'
 
 function Home() {
 	const [count, setCount] = useState(0)
-	const dispatch = useDispatch()
-	const { count: storeCount, loading } = useSelector((state) => state.counter)
-	const { userInfo } = useSelector((state) => state.user)
+	const dispatch = useAppDispatch()
+	const { count: storeCount, loading } = useAppSelector((state) => state.counter)
+	const { userInfo } = useAppSelector((state) => state.user)
 	return (
 		<div className="home">
 			<div className="place-items-center">
@@ -42,11 +42,11 @@ function Home() {
 					<br />
 					<button onClick={() => dispatch(increment())}>increment</button>
 					<button onClick={() => dispatch(decrement())}>decrement</button>
-					<button onClick={() => dispatch(decrementAsync())}>decrementAsync</button>
+					<button onClick={() => dispatch(decrementAsync(1800))}>decrementAsync</button>
 				</div>
 			</div>
 			{userInfo.name && <Link to="/admin">To Admin Page</Link>}
-			<p className="pt-4 read-the-docs">Click on the Vite and React logos to learn more</p>
+			<p className="pt-4 text-gray-600">Click on the Vite and React logos to learn more</p>
 		</div>
 	)
 }

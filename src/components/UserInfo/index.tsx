@@ -6,13 +6,13 @@
  * @Description:
  */
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useAppSelector, useAppDispatch } from '@/store/hooks'
 import { useNavigate } from 'react-router-dom'
 import { logout } from '@/store/user'
 const UserInfo = () => {
-	const dispatch = useDispatch()
+	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
-	const { userInfo } = useSelector((state) => state.user)
+	const { userInfo } = useAppSelector((state) => state.user)
 	const handleLogout = () => {
 		dispatch(logout())
 		navigate('/login')

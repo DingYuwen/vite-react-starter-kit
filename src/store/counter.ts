@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-05 14:52:21
- * @LastEditTime: 2023-01-09 08:59:25
+ * @LastEditTime: 2023-01-11 11:13:53
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -34,13 +34,9 @@ export const counterSlice = createSlice({
 
 export const { increment, decrement, setLoading } = counterSlice.actions
 
-export const decrementAsync = createAsyncThunk('counter/decrementAsync', async (time = 3000, { dispatch }) => {
+export const decrementAsync = createAsyncThunk('counter/decrementAsync', async (time: number, { dispatch }) => {
 	dispatch(setLoading(true))
-	await new Promise((resolve) => {
-		setTimeout(() => {
-			resolve()
-		}, time)
-	})
+	await new Promise<any>((resolve) => setTimeout(() => resolve(null), time))
 	return null
 })
 

@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-05 14:13:32
- * @LastEditTime: 2023-01-09 18:27:16
+ * @LastEditTime: 2023-01-11 09:43:22
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -15,19 +15,6 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@': resolve(__dirname, './src')
-		}
-	},
-	esbuild: {
-		loader: 'jsx',
-		include: /src\/.*\.jsx?$/,
-		exclude: []
-	},
-	optimizeDeps: {
-		include: ['lodash-es'],
-		esbuildOptions: {
-			loader: {
-				'.js': 'jsx'
-			}
 		}
 	},
 	build: {
