@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 14:47:08
- * @LastEditTime: 2023-01-11 10:54:39
+ * @LastEditTime: 2023-01-11 17:46:19
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -20,7 +20,7 @@ const DefaultLayout: FC = () => {
 		navigate('/login')
 	}
 	return (
-		<div>
+		<div className="text-center">
 			<h1> default layout </h1>
 			<span> user: {userInfo.name} </span>
 			<button

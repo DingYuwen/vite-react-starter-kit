@@ -5,6 +5,7 @@ specifiers:
   '@mantine/core': ^5.10.0
   '@mantine/hooks': ^5.10.0
   '@reduxjs/toolkit': ^1.9.1
+  '@tabler/icons': ^1.119.0
   '@types/node': ^18.11.18
   '@types/qs': ^6.9.7
   '@types/react': ^18.0.26
@@ -42,6 +43,7 @@ dependencies:
   '@mantine/core': registry.npmmirror.com/@mantine/core/5.10.0_lbfixegkxal6rwioqxubxet6s4
   '@mantine/hooks': registry.npmmirror.com/@mantine/hooks/5.10.0_react@18.2.0
   '@reduxjs/toolkit': registry.npmmirror.com/@reduxjs/toolkit/1.9.1_k4ae6lp43ej6mezo3ztvx6pykq
+  '@tabler/icons': registry.npmmirror.com/@tabler/icons/1.119.0_biqbaboplfbrettd7655fr4n2y
   qs: registry.npmmirror.com/qs/6.11.0
   react: registry.npmmirror.com/react/18.2.0
   react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
@@ -1156,6 +1158,24 @@ packages:
       estree-walker: registry.npmmirror.com/estree-walker/2.0.2
       picomatch: registry.npmmirror.com/picomatch/2.3.1
     dev: true
+
+  registry.npmmirror.com/@tabler/icons/1.119.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Fk3Qq4w2SXcTjc/n1cuL5bccPkylrOMo7cYpQIf/yw6zP76LQV9dtLcHQUjFiUnaYuswR645CnURIhlafyAh9g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tabler/icons/-/icons-1.119.0.tgz}
+    id: registry.npmmirror.com/@tabler/icons/1.119.0
+    name: '@tabler/icons'
+    version: 1.119.0
+    peerDependencies:
+      react: ^16.x || 17.x || 18.x
+      react-dom: ^16.x || 17.x || 18.x
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: registry.npmmirror.com/react/18.2.0
+      react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
+    dev: false
 
   registry.npmmirror.com/@trysound/sax/0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@trysound/sax/-/sax-0.2.0.tgz}

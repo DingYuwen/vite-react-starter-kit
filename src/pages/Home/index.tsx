@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-05 14:13:32
- * @LastEditTime: 2023-01-11 11:16:09
+ * @LastEditTime: 2023-01-11 17:46:53
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -17,7 +17,7 @@ function Home() {
 	const { count: storeCount, loading } = useAppSelector((state) => state.counter)
 	const { userInfo } = useAppSelector((state) => state.user)
 	return (
-		<div className="home">
+		<div className="home text-center">
 			<div className="place-items-center">
 				<div className="inline-flex">
 					<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
@@ -31,7 +31,7 @@ function Home() {
 			<h1>Vite + React</h1>
 			<h1>React-router-dom v6 + RTK</h1>
 
-			<div className="flex p-4 m-4">
+			<div className="flex justify-center p-4 m-4">
 				<div className="m-2 card flex place-items-center">
 					<button onClick={() => setCount((count) => count + 1)}>state count is {count}</button>
 				</div>
