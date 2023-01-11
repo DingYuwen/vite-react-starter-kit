@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 13:49:32
- * @LastEditTime: 2023-01-11 15:24:59
+ * @LastEditTime: 2023-01-11 18:19:32
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -14,7 +14,7 @@ import Guard from './Guard'
 import LazyElement from './LazyElement'
 import { useRoutes } from 'react-router-dom'
 
-const Login = lazy(() => import('@/pages/Login'))
+const Login = lazy(() => import('@/pages/Login/MantineLogin'))
 const Admin = lazy(() => import('@/pages/Admin'))
 const Dashboard = lazy(() => import('@/pages/Home/Dashboard'))
 const Home = lazy(() => import('@/pages/Home'))

@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-10 09:13:12
- * @LastEditTime: 2023-01-10 17:42:40
+ * @LastEditTime: 2023-01-11 18:27:14
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -11,5 +11,8 @@ module.exports = {
 	theme: {
 		extend: {}
 	},
-	plugins: []
+	plugins: [],
+	corePlugins: {
+    preflight: false,
+  }
 }
