@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-05 14:13:32
- * @LastEditTime: 2023-01-11 18:39:14
+ * @LastEditTime: 2023-01-12 16:42:01
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -56,7 +56,6 @@ function Home() {
 					</div>
 				</div>
 			</div>
-			{userInfo.name && <Link to="/admin">To Admin Page</Link>}
 			<p className="pt-4 text-gray-600">Click on the Vite and React logos to learn more</p>
 		</div>
 	)

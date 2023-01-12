@@ -1,23 +1,28 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
- * @Date: 2023-01-09 14:46:48
- * @LastEditTime: 2023-01-11 17:47:33
+ * @Date: 2023-01-09 14:47:08
+ * @LastEditTime: 2023-01-12 14:20:52
  * @LastEditors: dingyuwen
  * @Description:
  */
+import { FC } from 'react'
 import { Outlet } from 'react-router-dom'
-import SimpleResponsiveHeader from '@/components/Header/SimpleResponsiveHeader'
-const links = [
-	{ link: '/dyw1', label: 'dyw1' },
-	{ link: '/dyw2', label: 'dyw2' },
-	{ link: '/dyw3', label: 'dyw3' }
-]
-const PublicLayout = () => (
-	<div className="w-full">
-		<SimpleResponsiveHeader links={links} />
-		{/* <h1 className="text-center">public layout</h1> */}
-		<Outlet />
-	</div>
-)
+import { Title } from '@mantine/core'
 
+const PublicLayout: FC = () => {
+	return (
+		<>
+			<Title
+				className="text-blue-600 m-6"
+				sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}
+			>
+				PublicLayout
+			</Title>
+			<hr />
+			<div className="container mx-auto px-4">
+				<Outlet />
+			</div>
+		</>
+	)
+}
 export default PublicLayout

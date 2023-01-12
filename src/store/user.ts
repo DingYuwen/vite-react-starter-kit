@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 17:18:10
- * @LastEditTime: 2023-01-11 11:11:29
+ * @LastEditTime: 2023-01-12 15:32:01
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -10,17 +10,19 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { removeToken, setToken } from '@/utils'
 
 interface UserInfo {
-	name?: string;
-	[k: string]: any;
+	name: string
+	[k: string]: any
 }
 interface UserState {
-	loading: boolean;
-	isLogin: boolean;
+	loading: boolean
+	isLogin: boolean
 	userInfo: UserInfo
 }
 const initialState: UserState = {
 	loading: false,
-	userInfo: {},
+	userInfo: {
+		name: ''
+	},
 	isLogin: false
 }
 export const userSlice = createSlice({
@@ -39,7 +41,9 @@ export const userSlice = createSlice({
 		},
 		logout: (state) => {
 			state.isLogin = false
-			state.userInfo = {}
+			state.userInfo = {
+				name: ''
+			}
 			removeToken()
 		}
 	},
@@ -57,7 +61,7 @@ export const { setUserInfo, setIsLogin, setLoading, logout } = userSlice.actions
 
 export const login = createAsyncThunk('user/login', async (time: number, thunkApi) => {
 	thunkApi.dispatch(setLoading(true))
-	return await new Promise<UserInfo>((resolve) => setTimeout(() => resolve({name: 'dingyuwen'}), time))
+	return await new Promise<UserInfo>((resolve) => setTimeout(() => resolve({ name: 'dingyuwen' }), time))
 })
 
 export default userSlice.reducer

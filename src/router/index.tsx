@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 13:49:32
- * @LastEditTime: 2023-01-11 18:19:32
+ * @LastEditTime: 2023-01-12 16:34:55
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -14,6 +14,7 @@ import Guard from './Guard'
 import LazyElement from './LazyElement'
 import { useRoutes } from 'react-router-dom'
 
+const NotFound = lazy(() => import('@/pages/Error/NotFound'))
 const Login = lazy(() => import('@/pages/Login/MantineLogin'))
 const Admin = lazy(() => import('@/pages/Admin'))
 const Dashboard = lazy(() => import('@/pages/Home/Dashboard'))
@@ -29,13 +30,21 @@ export interface RouteMeta {
 
 export interface RouteObj {
 	path: string
-	component?: ReactNode;
+	component?: ReactNode
 	redirect?: string
 	meta?: RouteMeta
 	children?: RouteObj[]
 }
 
 const routesList: RouteObj[] = [
+	{
+		path: '*',
+		component: <NotFound />,
+		meta: {
+			auth: false,
+			title: '404'
+		}
+	},
 	{
 		path: '',
 		component: <DefaultLayout />,
@@ -108,8 +117,6 @@ function transRoutes(routes: RouteObj[]) {
 		if (redirect) {
 			obj.element = <Navigate to={redirect} replace={true} />
 		} else if (component && (meta.useLayoutGuard || meta.useRouteGuard)) {
-			obj.element = <Guard element={<LazyElement component={obj.component} />} meta={obj.meta} />
-		} else if (component && meta.useRouteGuard) {
 			obj.element = <Guard element={<LazyElement component={obj.component} />} meta={obj.meta} />
 		} else {
 			obj.element = <LazyElement component={obj.component} />

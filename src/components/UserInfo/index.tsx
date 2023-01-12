@@ -1,25 +1,21 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-10 10:10:29
- * @LastEditTime: 2023-01-10 10:13:41
+ * @LastEditTime: 2023-01-12 16:13:27
  * @LastEditors: dingyuwen
  * @Description:
  */
 
-import { useAppSelector, useAppDispatch } from '@/store/hooks'
-import { useNavigate } from 'react-router-dom'
-import { logout } from '@/store/user'
+import { useAppSelector } from '@/store/hooks'
+import { Title } from '@mantine/core'
 const UserInfo = () => {
-	const dispatch = useAppDispatch()
-	const navigate = useNavigate()
 	const { userInfo } = useAppSelector((state) => state.user)
-	const handleLogout = () => {
-		dispatch(logout())
-		navigate('/login')
-	}
+
 	return (
 		<div>
-			{userInfo.name} <button onClick={handleLogout}>logout</button>
+			<Title align="center" sx={(theme) => ({ fontFamily: `Greycliff CF, ${theme.fontFamily}`, fontWeight: 900 })}>
+				{userInfo.name}
+			</Title>
 		</div>
 	)
 }
