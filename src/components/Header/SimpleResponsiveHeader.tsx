@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-10 16:09:23
- * @LastEditTime: 2023-01-12 14:49:28
+ * @LastEditTime: 2023-01-12 16:54:56
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -26,7 +26,6 @@ import {
 	IconLogout,
 	IconSettings,
 	IconSearch,
-	IconLayoutDashboard,
 	IconMessageCircle,
 	IconTrash,
 	IconArrowsLeftRight,
@@ -194,9 +193,6 @@ export default function SimpleResponsiveHeader({ links }: HeaderSimpleProps) {
 						</Menu.Item>
 						<Menu.Item icon={<IconSettings size={14} />}>Settings</Menu.Item>
 						<Menu.Item icon={<IconMessageCircle size={14} />}>Messages</Menu.Item>
-						<Menu.Item icon={<IconLayoutDashboard size={14} />}>
-							<Link to="/admin">Dashboard</Link>
-						</Menu.Item>
 						<Menu.Item
 							icon={<IconSearch size={14} />}
 							rightSection={
