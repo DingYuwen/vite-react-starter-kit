@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-11 18:18:41
- * @LastEditTime: 2023-01-11 18:37:00
+ * @LastEditTime: 2023-01-12 18:19:52
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -30,7 +30,14 @@ export default function AuthenticationTitle() {
 			</Title>
 			<Text color="dimmed" size="sm" align="center" mt={5}>
 				Do not have an account yet?{' '}
-				<Anchor<'a'> href="#" size="sm" onClick={(event) => event.preventDefault()}>
+				<Anchor<'a'>
+					href="#"
+					size="sm"
+					onClick={(event) => {
+						event.preventDefault()
+						navigate('/signup')
+					}}
+				>
 					Create account
 				</Anchor>
 			</Text>
@@ -40,7 +47,14 @@ export default function AuthenticationTitle() {
 				<PasswordInput label="Password" placeholder="Your password" required mt="md" />
 				<Group position="apart" mt="lg">
 					<Checkbox label="Remember me" sx={{ lineHeight: 1 }} />
-					<Anchor<'a'> onClick={(event) => event.preventDefault()} href="#" size="sm">
+					<Anchor<'a'>
+						onClick={(event) => {
+							event.preventDefault()
+							navigate('/forgotpassword')
+						}}
+						href="#"
+						size="sm"
+					>
 						Forgot password?
 					</Anchor>
 				</Group>

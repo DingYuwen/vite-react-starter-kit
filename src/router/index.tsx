@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 13:49:32
- * @LastEditTime: 2023-01-12 16:34:55
+ * @LastEditTime: 2023-01-12 18:20:37
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -16,6 +16,8 @@ import { useRoutes } from 'react-router-dom'
 
 const NotFound = lazy(() => import('@/pages/Error/NotFound'))
 const Login = lazy(() => import('@/pages/Login/MantineLogin'))
+const SignUp = lazy(() => import('@/pages/SignUp'))
+const ForgotPassword = lazy(() => import('@/pages/ForgotPassword'))
 const Admin = lazy(() => import('@/pages/Admin'))
 const Dashboard = lazy(() => import('@/pages/Home/Dashboard'))
 const Home = lazy(() => import('@/pages/Home'))
@@ -82,7 +84,21 @@ const routesList: RouteObj[] = [
 				path: 'login',
 				component: <Login />,
 				meta: {
-					title: '登录'
+					title: 'Login'
+				}
+			},
+			{
+				path: 'signup',
+				component: <SignUp />,
+				meta: {
+					title: 'SignUp'
+				}
+			},
+			{
+				path: 'forgotpassword',
+				component: <ForgotPassword />,
+				meta: {
+					title: 'ForgotPassword'
 				}
 			}
 		]
