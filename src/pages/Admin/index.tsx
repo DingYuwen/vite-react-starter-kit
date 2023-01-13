@@ -1,14 +1,14 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-10 09:58:46
- * @LastEditTime: 2023-01-13 12:52:23
+ * @LastEditTime: 2023-01-13 14:14:07
  * @LastEditors: dingyuwen
  * @Description:
  */
 
 import { useRef, useState, FC } from 'react'
 import { Text, Group, Box, Button, createStyles, Image, SimpleGrid, RingProgress } from '@mantine/core'
-import { Dropzone, MIME_TYPES, IMAGE_MIME_TYPE, FileWithPath } from '@mantine/dropzone'
+import { Dropzone, IMAGE_MIME_TYPE, FileWithPath } from '@mantine/dropzone'
 import { IconCloudUpload, IconX, IconDownload } from '@tabler/icons'
 
 const useStyles = createStyles((theme) => ({
@@ -46,7 +46,7 @@ const ImageView: FC<ImageViewProps> = ({ file }) => {
 
 			req.upload.addEventListener('progress', (event: ProgressEvent) => {
 				if (event.lengthComputable) {
-					setUploadProgressPercentage(Number(Math.round(event.loaded / event.total * 100).toFixed(2)))
+					setUploadProgressPercentage(Number(Math.round((event.loaded / event.total) * 100).toFixed(2)))
 				}
 			})
 
