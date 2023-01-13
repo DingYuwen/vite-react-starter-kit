@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 13:49:32
- * @LastEditTime: 2023-01-12 18:20:37
+ * @LastEditTime: 2023-01-13 10:37:05
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -19,6 +19,7 @@ const Login = lazy(() => import('@/pages/Login/MantineLogin'))
 const SignUp = lazy(() => import('@/pages/SignUp'))
 const ForgotPassword = lazy(() => import('@/pages/ForgotPassword'))
 const Admin = lazy(() => import('@/pages/Admin'))
+const AdminSetting = lazy(() => import('@/pages/Setting'))
 const Dashboard = lazy(() => import('@/pages/Home/Dashboard'))
 const Home = lazy(() => import('@/pages/Home'))
 
@@ -114,6 +115,14 @@ const routesList: RouteObj[] = [
 			{
 				path: '',
 				component: <Admin />,
+				meta: {
+					title: '控制台',
+					auth: true
+				}
+			},
+			{
+				path: 'setting',
+				component: <AdminSetting />,
 				meta: {
 					title: '控制台',
 					auth: true

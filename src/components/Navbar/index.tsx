@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-12 14:59:54
- * @LastEditTime: 2023-01-12 17:50:08
+ * @LastEditTime: 2023-01-13 10:35:50
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -15,12 +15,12 @@ const adminMockData = [
 		label: 'Security',
 		icon: IconLock,
 		links: [
-			{ label: 'Enable 2FA', link: '/' },
-			{ label: 'Change password', link: '/' },
-			{ label: 'Recovery codes', link: '/' }
+			{ label: 'Enable 2FA', link: '/admin' },
+			{ label: 'Change password', link: '/admin' },
+			{ label: 'Recovery codes', link: '/admin' }
 		]
 	},
-	{ label: 'Settings', icon: IconAdjustments, link: '/Settings' }
+	{ label: 'Settings', icon: IconAdjustments, link: '/admin/setting' }
 ]
 
 const useAdminStyles = createStyles((theme) => ({
