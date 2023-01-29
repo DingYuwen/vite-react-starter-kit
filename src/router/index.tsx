@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 13:49:32
- * @LastEditTime: 2023-01-13 10:37:05
+ * @LastEditTime: 2023-01-29 16:36:11
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -14,8 +14,10 @@ import Guard from './Guard'
 import LazyElement from './LazyElement'
 import { useRoutes } from 'react-router-dom'
 
+const ThreeDemo = lazy(() => import('@/pages/Demo/3D'))
 const NotFound = lazy(() => import('@/pages/Error/NotFound'))
 const Login = lazy(() => import('@/pages/Login/MantineLogin'))
+const Demo = lazy(() => import('@/pages/Demo'))
 const SignUp = lazy(() => import('@/pages/SignUp'))
 const ForgotPassword = lazy(() => import('@/pages/ForgotPassword'))
 const Admin = lazy(() => import('@/pages/Admin'))
@@ -127,6 +129,20 @@ const routesList: RouteObj[] = [
 					title: '控制台',
 					auth: true
 				}
+			},
+			{
+				path: 'demo',
+				component: <Demo />,
+				children: [
+					{
+						path: '3d',
+						component: <ThreeDemo />,
+						meta: {
+							title: '3d',
+							auth: true
+						}
+					}
+				]
 			}
 		]
 	}
@@ -141,10 +157,10 @@ function transRoutes(routes: RouteObj[]) {
 
 		if (redirect) {
 			obj.element = <Navigate to={redirect} replace={true} />
-		} else if (component && (meta.useLayoutGuard || meta.useRouteGuard)) {
-			obj.element = <Guard element={<LazyElement component={obj.component} />} meta={obj.meta} />
-		} else {
-			obj.element = <LazyElement component={obj.component} />
+		} else if (component && meta && (meta.useLayoutGuard || meta.useRouteGuard)) {
+			obj.element = <Guard element={<LazyElement component={component} />} meta={meta} />
+		} else if (component) {
+			obj.element = <LazyElement component={component} />
 		}
 
 		if (children) {

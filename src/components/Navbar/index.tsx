@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-12 14:59:54
- * @LastEditTime: 2023-01-13 10:35:50
+ * @LastEditTime: 2023-01-29 16:07:10
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -12,12 +12,12 @@ import { LinksGroup } from './LinksGroup'
 const adminMockData = [
 	{ label: 'Dashboard', icon: IconGauge, link: '/admin' },
 	{
-		label: 'Security',
+		label: 'Demo',
 		icon: IconLock,
 		links: [
-			{ label: 'Enable 2FA', link: '/admin' },
-			{ label: 'Change password', link: '/admin' },
-			{ label: 'Recovery codes', link: '/admin' }
+			{ label: 'Upload', link: '/admin/demo/upload' },
+			{ label: '3D', link: '/admin/demo/3d' },
+			{ label: 'AIGC', link: '/admin/demo/aigc' }
 		]
 	},
 	{ label: 'Settings', icon: IconAdjustments, link: '/admin/setting' }
