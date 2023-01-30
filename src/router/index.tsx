@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-09 13:49:32
- * @LastEditTime: 2023-01-29 16:36:11
+ * @LastEditTime: 2023-01-30 16:33:21
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -14,6 +14,7 @@ import Guard from './Guard'
 import LazyElement from './LazyElement'
 import { useRoutes } from 'react-router-dom'
 
+const CanvasDemo = lazy(() => import('@/pages/Demo/Canvas'))
 const ThreeDemo = lazy(() => import('@/pages/Demo/3D'))
 const NotFound = lazy(() => import('@/pages/Error/NotFound'))
 const Login = lazy(() => import('@/pages/Login/MantineLogin'))
@@ -139,6 +140,14 @@ const routesList: RouteObj[] = [
 						component: <ThreeDemo />,
 						meta: {
 							title: '3d',
+							auth: true
+						}
+					},
+					{
+						path: 'canvas',
+						component: <CanvasDemo />,
+						meta: {
+							title: 'canvas',
 							auth: true
 						}
 					}

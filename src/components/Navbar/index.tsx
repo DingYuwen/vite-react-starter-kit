@@ -1,7 +1,7 @@
 /*
  * @Author: dingyuwen ding_yuwen@163.com
  * @Date: 2023-01-12 14:59:54
- * @LastEditTime: 2023-01-29 16:07:10
+ * @LastEditTime: 2023-01-30 16:35:42
  * @LastEditors: dingyuwen
  * @Description:
  */
@@ -17,6 +17,7 @@ const adminMockData = [
 		links: [
 			{ label: 'Upload', link: '/admin/demo/upload' },
 			{ label: '3D', link: '/admin/demo/3d' },
+			{ label: 'Canvas', link: '/admin/demo/canvas' },
 			{ label: 'AIGC', link: '/admin/demo/aigc' }
 		]
 	},
